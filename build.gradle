@@ -1,0 +1,30 @@
+plugins {
+  id 'java'
+  id 'org.jetbrains.intellij' version '1.0'
+}
+
+group 'org.intellij.sdk'
+version '2.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+  version = '2020.2.4'
+}
+
+buildSearchableOptions {
+  enabled = false
+}
+
+
+patchPluginXml {
+  version = project.version
+  sinceBuild = '202'
+  untilBuild = '211.*'
+}
+
